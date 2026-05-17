@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Don't Fucking Quit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+SC:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__noise" aria-hidden="true"></div>
+        <nav class="nav" aria-label="主导航">
+          <a class="brand" href="#hero-title" aria-label="Don't Fucking Quit 首页">
+            <span class="brand__mark">DFQ</span>
+            <span>Don't Fucking Quit</span>
+          </a>
+          <a class="nav__link" href="#pledge">立刻重启</a>
+        </nav>
+
+        <div class="hero__content">
+          <p class="eyebrow">Anti-give-up Club / 反放弃联盟</p>
+          <h1 id="hero-title">DON'T<br /><span>FUCKING</span><br />QUIT</h1>
+          <p class="hero__copy">
+            不是每一天都要赢，但每一天都别缴械。Don't fucking quit——把狠话甩给退缩，把下一步留给自己。
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#pledge">我还要继续</a>
+            <a class="button button--ghost" href="#manifesto">看看宣言</a>
+          </div>
+        </div>
+
+        <div class="status-card" aria-label="今日状态">
+          <span class="status-card__label">Today's Mission</span>
+          <strong>再撑 1%</strong>
+          <p>累了就慢一点，别按退出键。</p>
+        </div>
+      </section>
+
+      <section id="manifesto" class="manifesto" aria-labelledby="manifesto-title">
+        <p class="section-kicker">Manifesto</p>
+        <h2 id="manifesto-title">主题只有一个：不准烂尾。</h2>
+        <div class="manifesto__grid">
+          <article>
+            <span>01</span>
+            <h3>先动起来</h3>
+            <p>别等状态完美。先写一行、跑一圈、发一封信，惯性会在行动后出现。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>骂完继续</h3>
+            <p>崩溃可以，爆粗也可以；但别把情绪当终点，它只是重启前的噪音。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>小赢累积</h3>
+            <p>今天只前进一点点也算数。1% 的推进，会在某天变成别人看见的狠劲。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="pledge" class="pledge" aria-labelledby="pledge-title">
+        <div>
+          <p class="section-kicker">Pledge</p>
+          <h2 id="pledge-title">把退出键砸碎。</h2>
+        </div>
+        <blockquote>
+          “我可以休息，可以调整，可以重新开始——但我不会就这样退出。”
+        </blockquote>
+        <a class="button button--primary" href="mailto:me@example.com?subject=Don't%20Fucking%20Quit">写下今天的下一步</a>
+      </section>
+    </main>
+  </body>
+</html>

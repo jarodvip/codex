@@ -1,0 +1,342 @@
+:root {
+  color-scheme: dark;
+  --bg: #07070a;
+  --panel: rgba(255, 255, 255, 0.08);
+  --panel-strong: rgba(255, 255, 255, 0.14);
+  --text: #f6f2ea;
+  --muted: #b8b0a4;
+  --acid: #d7ff2f;
+  --hot: #ff365d;
+  --ink: #0d0d10;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 54, 93, 0.28), transparent 34rem),
+    radial-gradient(circle at 80% 12%, rgba(215, 255, 47, 0.18), transparent 28rem),
+    linear-gradient(135deg, #050507 0%, #111117 52%, #050507 100%);
+  color: var(--text);
+  font-family: "Inter", "Noto Sans SC", system-ui, sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 28px 0 72px;
+  overflow: hidden;
+}
+
+.hero__noise {
+  position: absolute;
+  inset: 88px 0 40px;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 36px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.02)),
+    repeating-linear-gradient(-8deg, transparent 0 18px, rgba(255, 255, 255, 0.035) 18px 20px);
+  box-shadow: 0 30px 120px rgba(0, 0, 0, 0.48);
+}
+
+.nav {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand,
+.nav__link,
+.button {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.brand__mark {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--acid);
+  color: var(--ink);
+  box-shadow: 5px 5px 0 var(--hot);
+}
+
+.nav__link {
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.hero__content {
+  max-width: 860px;
+  padding-top: 72px;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 18px;
+  color: var(--acid);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: clamp(3.7rem, 14vw, 12rem);
+  line-height: 0.78;
+  letter-spacing: -0.11em;
+  text-transform: uppercase;
+  text-shadow: 8px 8px 0 rgba(255, 54, 93, 0.88);
+}
+
+h1 span {
+  color: var(--acid);
+}
+
+.hero__copy {
+  max-width: 660px;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.75;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.button:hover {
+  transform: translate(-2px, -2px);
+}
+
+.button--primary {
+  background: var(--acid);
+  color: var(--ink);
+  box-shadow: 7px 7px 0 var(--hot);
+}
+
+.button--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.status-card {
+  position: absolute;
+  right: 34px;
+  bottom: 90px;
+  width: min(280px, calc(100% - 68px));
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  background: rgba(7, 7, 10, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.status-card__label {
+  color: var(--hot);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.status-card strong {
+  display: block;
+  margin: 12px 0 8px;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.status-card p,
+.manifesto p,
+.pledge blockquote {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.manifesto,
+.pledge {
+  padding: 96px 0;
+}
+
+.manifesto h2,
+.pledge h2 {
+  max-width: 760px;
+  font-size: clamp(2.4rem, 6vw, 5.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.08em;
+}
+
+.manifesto__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 42px;
+}
+
+.manifesto article {
+  min-height: 280px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 30px;
+  background: var(--panel);
+}
+
+.manifesto article:nth-child(2) {
+  background: var(--panel-strong);
+  transform: translateY(28px);
+}
+
+.manifesto span {
+  color: var(--hot);
+  font-weight: 900;
+}
+
+.manifesto h3 {
+  margin: 42px 0 14px;
+  font-size: 1.7rem;
+}
+
+.pledge {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 42px;
+  margin-bottom: 48px;
+  padding-right: 42px;
+  padding-left: 42px;
+  border-radius: 36px;
+  background: linear-gradient(135deg, rgba(215, 255, 47, 0.18), rgba(255, 54, 93, 0.16));
+}
+
+.pledge blockquote {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 2.3rem);
+  font-weight: 800;
+}
+
+.pledge .button {
+  grid-column: 2;
+  width: fit-content;
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    width: min(100% - 22px, 1180px);
+  }
+
+  .hero {
+    min-height: auto;
+    padding-bottom: 38px;
+  }
+
+  .nav {
+    position: relative;
+    top: auto;
+    margin-bottom: 52px;
+  }
+
+  .brand span:last-child,
+  .nav__link {
+    display: none;
+  }
+
+  .hero__content {
+    padding-top: 0;
+  }
+
+  h1 {
+    font-size: clamp(3.5rem, 21vw, 6.6rem);
+  }
+
+  .status-card {
+    position: static;
+    margin-top: 34px;
+    width: 100%;
+  }
+
+  .manifesto__grid,
+  .pledge {
+    grid-template-columns: 1fr;
+  }
+
+  .manifesto article:nth-child(2) {
+    transform: none;
+  }
+
+  .pledge {
+    padding: 34px 22px;
+  }
+
+  .pledge .button {
+    grid-column: auto;
+  }
+}
